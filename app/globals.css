@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/* ─── Custom Theme Tokens ─── */
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Neon palette */
+  --color-neon-blue: #00d4ff;
+  --color-neon-purple: #a855f7;
+  --color-neon-green: #34d399;
+  --color-neon-pink: #f472b6;
+
+  /* Backgrounds */
+  --color-obsidian: #080c14;
+  --color-surface: #0d1320;
+  --color-surface-2: #131929;
+  --color-border: rgba(255,255,255,0.08);
+}
+
+/* ─── Base ─── */
+:root {
+  --bg: #080c14;
+  --fg: #e2e8f0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #080c14; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #00d4ff, #a855f7);
+  border-radius: 3px;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(0, 212, 255, 0.25);
+  color: #e2e8f0;
+}
+
+/* ─── Neon Glow Utilities ─── */
+.glow-blue  { box-shadow: 0 0 20px rgba(0, 212, 255, 0.35), 0 0 60px rgba(0, 212, 255, 0.15); }
+.glow-purple { box-shadow: 0 0 20px rgba(168, 85, 247, 0.35), 0 0 60px rgba(168, 85, 247, 0.15); }
+.glow-green { box-shadow: 0 0 20px rgba(52, 211, 153, 0.35), 0 0 60px rgba(52, 211, 153, 0.15); }
+
+.text-glow-blue   { text-shadow: 0 0 20px rgba(0, 212, 255, 0.6); }
+.text-glow-purple { text-shadow: 0 0 20px rgba(168, 85, 247, 0.6); }
+
+/* ─── Gradient Text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, #00d4ff 0%, #a855f7 50%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Glass Card ─── */
+.glass {
+  background: rgba(13, 19, 32, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ─── Section common spacing ─── */
+section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* ─── Mono tag style ─── */
+.tag-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Typing cursor blink ─── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor { animation: blink 1s step-end infinite; }
+
+/* ─── Particle float ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+  33%       { transform: translateY(-20px) rotate(120deg); opacity: 1; }
+  66%       { transform: translateY(10px) rotate(240deg); opacity: 0.4; }
+}
+
+/* ─── Gradient border trick ─── */
+.neon-border {
+  position: relative;
+}
+.neon-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #00d4ff, #a855f7, #34d399);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
