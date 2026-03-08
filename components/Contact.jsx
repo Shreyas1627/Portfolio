@@ -69,7 +69,7 @@ function TerminalWidget() {
       </div>
 
       {/* Output area */}
-      <div className="p-4 h-56 overflow-y-auto font-mono text-sm space-y-1">
+      <div className="p-4 h-44 sm:h-56 overflow-y-auto font-mono text-sm space-y-1">
         {history.map((line, i) => (
           <div
             key={i}
@@ -260,7 +260,7 @@ export default function Contact() {
             <ContactForm />
 
             {/* Quick connect */}
-            <div className="flex items-center gap-4 mt-4">
+            <div className="flex flex-wrap items-center gap-3 mt-4">
               {[
                 { icon: Linkedin, href: contact.linkedin, label: "LinkedIn", color: "#00d4ff" },
                 { icon: Github, href: contact.github, label: "GitHub", color: "#a855f7" },

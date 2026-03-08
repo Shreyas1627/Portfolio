@@ -67,7 +67,7 @@ function AnimatedAvatar() {
   const [photoError, setPhotoError] = useState(false);
 
   return (
-    <div className="relative w-64 h-64 rounded-3xl overflow-hidden border border-white/10 bg-[#0d1320]">
+    <div className="relative w-full max-w-[18rem] aspect-square rounded-3xl overflow-hidden border border-white/10 bg-[#0d1320] mx-auto lg:mx-0">
       {/* Photo — profile.jpg in /public */}
       {!photoError && (
         <img

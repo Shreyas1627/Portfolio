@@ -94,9 +94,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="h-10 flex items-center justify-center mb-8"
+          className="min-h-[2.5rem] flex items-center justify-center mb-8 px-4"
         >
-          <span className="font-mono text-lg sm:text-xl text-slate-400">
+          <span className="font-mono text-base sm:text-xl text-slate-400 text-center">
             {typedText}
             <span className="cursor text-[#00d4ff] ml-0.5">|</span>
           </span>
@@ -137,7 +137,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="flex items-center justify-center gap-4"
+          className="flex flex-wrap items-center justify-center gap-3"
         >
           {[
             { icon: Linkedin, href: hero.linkedin, label: "LinkedIn", color: "#00d4ff" },

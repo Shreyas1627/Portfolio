@@ -83,8 +83,14 @@ body {
 
 /* ─── Section common spacing ─── */
 section {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+  section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
 }
 
 /* ─── Mono tag style ─── */

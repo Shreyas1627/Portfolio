@@ -31,29 +31,37 @@ export default function Experience() {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Vertical line */}
+          {/* Desktop: vertical center line */}
           <div className="absolute left-1/2 -translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-[#00d4ff]/50 via-[#a855f7]/30 to-transparent hidden md:block" />
+          {/* Mobile: vertical left line */}
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-[#00d4ff]/40 via-[#a855f7]/20 to-transparent md:hidden" />
 
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-12">
             {experience.map((exp, i) => {
               const c = colorMap[exp.color] || colorMap.blue;
               const isLeft = i % 2 === 0;
 
               return (
-                <div key={exp.id} className="relative flex items-center md:justify-between gap-6">
-                  {/* Glowing center node (desktop) */}
+                <div key={exp.id} className="relative flex items-start md:items-center md:justify-between gap-6 pl-10 md:pl-0">
+                  {/* Mobile: left dot */}
+                  <div
+                    className="absolute left-[13px] top-6 w-3 h-3 rounded-full border-2 border-[#080c14] md:hidden"
+                    style={{ background: c.node, boxShadow: `0 0 12px ${c.glow}` }}
+                  />
+
+                  {/* Desktop: glowing center node */}
                   <div
                     className="absolute left-1/2 -translate-x-1/2 w-5 h-5 rounded-full border-2 border-[#080c14] z-10 hidden md:flex items-center justify-center"
                     style={{ background: c.node, boxShadow: `0 0 20px ${c.glow}` }}
                   />
 
-                  {/* Card — alternating sides on desktop */}
+                  {/* Card — alternating sides on desktop, full width on mobile */}
                   <motion.div
                     initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-60px" }}
                     transition={{ duration: 0.6, delay: i * 0.15 }}
-                    className={`w-full md:w-[calc(50%-2.5rem)] glass rounded-2xl border border-white/10 p-6 ${
+                    className={`w-full md:w-[calc(50%-2.5rem)] glass rounded-2xl border border-white/10 p-5 md:p-6 ${
                       isLeft ? "md:mr-auto" : "md:ml-auto"
                     }`}
                   >
@@ -62,9 +70,9 @@ export default function Experience() {
                       {exp.type}
                     </span>
 
-                    <h3 className="text-xl font-bold text-white mb-1">{exp.role}</h3>
+                    <h3 className="text-lg md:text-xl font-bold text-white mb-1">{exp.role}</h3>
 
-                    <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-4">
                       <span className="flex items-center gap-1.5 text-slate-300 font-medium text-sm">
                         <Briefcase size={14} style={{ color: c.node }} />
                         {exp.company}
