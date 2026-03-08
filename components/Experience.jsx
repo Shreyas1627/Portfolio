@@ -10,7 +10,7 @@ const colorMap = {
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-24 bg-[#0a0f1e]">
+    <section id="experience" className="relative py-24 bg-[#0a0f1e] overflow-hidden">
       <div className="absolute left-0 top-1/3 w-[350px] h-[350px] rounded-full bg-[#00d4ff]/4 blur-[100px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-6">

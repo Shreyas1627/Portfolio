@@ -105,7 +105,7 @@ function ProjectCard({ project, index }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-24 bg-[#080c14]">
+    <section id="projects" className="relative py-24 bg-[#080c14] overflow-hidden">
       <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-[#34d399]/4 blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">

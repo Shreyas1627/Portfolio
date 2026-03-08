@@ -98,7 +98,7 @@ function AnimatedAvatar() {
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 bg-[#080c14]">
+    <section id="about" className="relative py-24 bg-[#080c14] overflow-hidden">
       <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-[#a855f7]/5 blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">

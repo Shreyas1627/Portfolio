@@ -12,8 +12,13 @@ function TerminalWidget() {
   const [input, setInput] = useState("");
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
+  const mountedRef = useRef(false);
 
   useEffect(() => {
+    if (!mountedRef.current) {
+      mountedRef.current = true;
+      return;
+    }
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [history]);
 
@@ -216,7 +221,7 @@ function ContactForm() {
 // ─── Main Contact Section ─────────────────────────────────────────
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-24 bg-[#080c14]">
+    <section id="contact" className="relative py-24 bg-[#080c14] overflow-hidden">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-[#00d4ff]/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">

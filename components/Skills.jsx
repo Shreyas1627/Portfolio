@@ -34,7 +34,7 @@ function ProgressBar({ progress, color, delay }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-24 bg-[#0a0f1e]">
+    <section id="skills" className="relative py-24 bg-[#0a0f1e] overflow-hidden">
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[300px] rounded-full bg-[#00d4ff]/4 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">

@@ -14,7 +14,7 @@ const icons = [Award, Shield, CheckCircle, Cpu, Layers, Star, Award, Shield, Che
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="relative py-24 bg-[#080c14]">
+    <section id="certifications" className="relative py-24 bg-[#080c14] overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-[#a855f7]/5 blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">

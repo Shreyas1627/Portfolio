@@ -12,7 +12,7 @@ const colorMap = {
 
 export default function Leadership() {
   return (
-    <section id="leadership" className="relative py-24 bg-[#0a0f1e]">
+    <section id="leadership" className="relative py-24 bg-[#0a0f1e] overflow-hidden">
       <div className="absolute bottom-0 right-0 w-[400px] h-[300px] rounded-full bg-[#34d399]/4 blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">

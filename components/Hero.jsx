@@ -42,7 +42,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden w-full"
     >
       {/* Radial gradient background */}
       <div className="absolute inset-0 bg-[#080c14]">
