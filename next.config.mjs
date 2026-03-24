@@ -3,7 +3,8 @@ const nextConfig = {
   /* config options here */
   output: 'export',
   basePath: '/Portfolio',
-  assetPrefix: '/Portfolio',
+  // assetPrefix: '/Portfolio',
+  trailingSlash: true,
   reactCompiler: true,
 };
 
