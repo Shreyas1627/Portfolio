@@ -2,6 +2,8 @@
 const nextConfig = {
   /* config options here */
   output: 'export',
+  basePath: '/Portfolio',
+  assetPrefix: '/Portfolio',
   reactCompiler: true,
 };
 
