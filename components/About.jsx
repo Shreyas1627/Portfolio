@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { GraduationCap, Cpu, Users, Rocket, Camera } from "lucide-react";
 import { about } from "@/lib/data";
-
+import profilePic from '../../public/profile.jpg';
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0 },
@@ -71,7 +71,7 @@ function AnimatedAvatar() {
       {/* Photo — profile.jpg in /public */}
       {!photoError && (
         <img
-          src="/Portfolio/profile.jpg"
+          {/* src="profile.jpg" */}
           alt="Shreyas Mirashi"
           onError={() => setPhotoError(true)}
           className="w-full h-full object-cover object-center"
