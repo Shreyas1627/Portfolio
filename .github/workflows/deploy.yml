@@ -2,7 +2,7 @@ name: Deploy Next.js site to Pages
 
 on:
   push:
-    branches: ["main"] # Or whatever your default branch is
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -31,7 +31,7 @@ jobs:
         with:
           path: ./out
 
-deploy:
+  deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
