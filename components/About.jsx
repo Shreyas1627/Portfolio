@@ -71,7 +71,7 @@ function AnimatedAvatar() {
       {/* Photo — profile.jpg in /public */}
       {!photoError && (
         <img
-          src="/profile.jpg"
+          src="/Portfolio/profile.jpg"
           alt="Shreyas Mirashi"
           onError={() => setPhotoError(true)}
           className="w-full h-full object-cover object-center"
